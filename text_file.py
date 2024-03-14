@@ -9,3 +9,6 @@ with open('ALL_DUA/TEXT_DOCX/Дуа_Выход_Дом.txt', 'r', encoding='utf-8
 
 with open('ALL_DUA/TEXT_DOCX/Дуа_После_Еда.txt', 'r', encoding='utf-8') as after_eating_file:
     after_eating = after_eating_file.read()
+
+with open('ALL_DUA/TEXT_DOCX/Дуа_Перед_Сном.txt', 'r', encoding='utf-8') as pered_snom_file:
+    pered_snom = pered_snom_file.read()
