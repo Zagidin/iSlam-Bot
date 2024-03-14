@@ -6,6 +6,7 @@ from keyboards.keybard_dua import (
     dua_list_one, dua_list_two, dua_list_tree
 )
 from keyboards.oplata import summa
+from keyboards.keyboard_surah.all_surah import all_surah
 
 
 @dp.message_handler(lambda message: types.Message)
@@ -223,6 +224,11 @@ async def bot_send_message(message: types.Message):
         await message.answer("⌛")
         await message.answer("Идёт Обработка файла ...")
         await message.answer_document(file)
+    elif message.text == '<= Читать Суру =>':
+        await message.reply(
+            "Выберите Суру",
+            reply_markup=all_surah
+        )
     else:
         await message.answer(
             "Выберите Дуа",
