@@ -2,8 +2,9 @@ from bot.registar_bot import dp
 from aiogram import types
 from inlanekey.helpproect import proect_help
 
+
 @dp.message_handler(commands=['help'])
-async def help(message: types.Message):
+async def help_bot(message: types.Message):
     await message.answer(
         f"Дуа — это личная мольба мусульманина на родном языке, обращение к Аллаху "
         f"в исламе. Одна из разновидностей поклонения.\nДуа произносят в различных "

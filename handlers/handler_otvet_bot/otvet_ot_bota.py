@@ -9,7 +9,7 @@ from keyboards.oplata import summa
 
 
 @dp.message_handler(lambda message: types.Message)
-async def otvet(message: types.Message):
+async def bot_send_message(message: types.Message):
     if message.text == 'Ва-алейкум ас-саля́м ва-рахмату-Лла́хи ва-барака́тух 👋':
         await message.answer(
             "Выбери Дуа",
