@@ -1,5 +1,7 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
+summa = ["50 ₽", "100 ₽", "150 ₽"]
+
 oplata = ReplyKeyboardMarkup(resize_keyboard=True)
 btn1 = KeyboardButton('50 ₽')
 btn2 = KeyboardButton('100 ₽')
