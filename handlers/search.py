@@ -25,6 +25,8 @@ async def search_message(message: types.Message, state: FSMContext) -> None:
     async with state.proxy() as data:
         data['search_islam_site'] = message.text.lower()
 
+    await state.finish()
+
     url_search = "https://islam.global/search/?_token=wdXCbHI9XPga80Fh6aCsLSBTo66d9kNm0FFqsE1B&query=" + data[
         'search_islam_site'
     ]
@@ -38,8 +40,6 @@ async def search_message(message: types.Message, state: FSMContext) -> None:
             )
         )
     )
-
-    await state.finish()
 
     await message.answer(
         text="Ответ обработан\nнажмите на кнопку ниже.\n\nЧтобы создать запрос заново\nНажмите на /search.",

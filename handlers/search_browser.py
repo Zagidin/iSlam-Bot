@@ -23,7 +23,9 @@ async def search_browser(message: types.Message):
 async def search_browser(message: types, state: FSMContext) -> None:
 
     async with state.proxy() as data:
-        data['search_browser'] = message.text
+        data['search_browser'] = message.text.lower()
+
+    await state.finish()
 
     url_search_browser = "https://yandex.ru/search/?text=" + data['search_browser']
 
@@ -36,8 +38,6 @@ async def search_browser(message: types, state: FSMContext) -> None:
             )
         )
     )
-
-    await state.finish()
 
     await message.answer(
         text=f"Ответ обработан\nнажмите на кнопку ниже."
