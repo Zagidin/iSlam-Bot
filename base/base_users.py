@@ -41,3 +41,14 @@ def select_all_users():
     users_id = cur.fetchall()
 
     return users_id
+
+
+def select_admin_users_sms():
+    db = sqlite3.connect('./base/users.db')
+    cur = db.cursor()
+
+    sql = "SELECT name, phone, sms_user FROM Users"
+    cur.execute(sql)
+    users_sms = cur.fetchall()
+
+    return users_sms

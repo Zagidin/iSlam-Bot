@@ -7,6 +7,8 @@ from keyboards.keybard_dua import (
 )
 from keyboards.oplata import summa
 from keyboards.keyboard_surah.all_surah import all_surah
+from base.base_users import select_admin_users_sms
+# from base.setting_write_base import print_users_settings
 
 
 @dp.message_handler(lambda message: types.Message)
@@ -15,6 +17,11 @@ async def bot_send_message(message: types.Message):
         await message.answer(
             "Выбери Дуа",
             reply_markup=dua_list_one.dua_list_one
+        )
+    elif message.text == 'Посмореть Сообщения от Пользователей':
+
+        await message.answer(
+            text="Пользователи: \n\n{}".format(*select_admin_users_sms())
         )
     elif message.text == 'Далее => 📖📚':
         await message.reply(
