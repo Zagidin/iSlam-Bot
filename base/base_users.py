@@ -8,20 +8,23 @@ def start_base():
     cur.execute("""
     CREATE TABLE IF NOT EXISTS Users (
         id INTEGER PRIMARY KEY,
-        id_user INTEGER
+        id_user INTEGER,
+        name TEXT,
+        phone INTEGER,
+        sms_user TEXT
         )
     """)
 
     db.close()
 
 
-def open_write_base_users(id_user):
+def open_write_base_users(id_user, name, phone, sms_user):
     db = sqlite3.connect('./base/users.db')
     cur = db.cursor()
 
-    sql = "INSERT INTO Users (id_user) VALUES (?)"
+    sql = "INSERT INTO Users (id_user, name, phone, sms_user) VALUES (?, ?, ?, ?)"
 
-    params = (id_user, )
+    params = (id_user, name, phone, sms_user, )
 
     cur.execute(sql, params)
 
