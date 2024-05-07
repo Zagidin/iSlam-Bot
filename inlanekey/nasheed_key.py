@@ -1,5 +1,7 @@
 from aiogram.types import (
-    InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
+    InlineKeyboardMarkup,
+    InlineKeyboardButton,
+    WebAppInfo
 )
 
 
