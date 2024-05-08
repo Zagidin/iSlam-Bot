@@ -33,7 +33,7 @@ ___
  pip3 install python-dotenv
 ```
 ---
-[:bulb:]
+:bulb:
 ### Перед запуском, создайте файл `.env`
 > TOKEN_BOT=<Ваш Токен Бота>
 
