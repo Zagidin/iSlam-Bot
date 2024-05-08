@@ -37,8 +37,13 @@ def select_all_users():
     cur = db.cursor()
 
     sql = "SELECT id_user FROM Users"
+
     cur.execute(sql)
+
     users_id = cur.fetchall()
+
+    db.commit()
+    db.close()
 
     return users_id
 
@@ -48,7 +53,24 @@ def select_admin_users_sms():
     cur = db.cursor()
 
     sql = "SELECT id, name, phone, sms_user FROM Users"
+
     cur.execute(sql)
+
     users_sms = cur.fetchall()
 
+    db.commit()
+    db.close()
+
     return users_sms
+
+
+def delete_admin_users(num_users):
+    db = sqlite3.connect('./base/users.db')
+    cur = db.cursor()
+
+    sql = "DELETE FROM Users WHERE id = ?"
+
+    cur.execute(sql, (num_users, ))
+
+    db.commit()
+    db.close()

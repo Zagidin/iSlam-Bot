@@ -27,8 +27,8 @@ async def feedback(message: Message):
         await Userfeedback.sms_feedback.set()
     else:
         await message.answer(
-            text=f"Обратную связь можно оставить только один раз!\n"
-                 f"\nP.S. Можно будет написать Администратору через 48 часов ;)",
+            text=f"Обратную связь можно оставить только один раз! 😔\n"
+                 f"\nP.S. Можно будет написать Администратору через 48 часов 😌",
             reply_markup=ReplyKeyboardRemove()
         )
 
@@ -63,6 +63,9 @@ async def send_phone_feedback(message: Message, state: FSMContext):
     )
 
     await message.answer(
-        text="Спасибо за обратную связь :)",
+        text="Спасибо за обратную связь 😉📝",
         reply_markup=ReplyKeyboardRemove()
+    )
+    await message.answer(
+        text="Администратор скоро свяжется с Вами ☎"
     )

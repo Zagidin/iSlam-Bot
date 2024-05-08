@@ -1,5 +1,6 @@
 import text_file
 
+from time import sleep
 from aiogram import types
 from bot.registar_bot import dp
 from keyboards.keybard_dua import (
@@ -8,7 +9,7 @@ from keyboards.keybard_dua import (
 from keyboards.oplata import summa
 from keyboards.keyboard_surah.all_surah import all_surah
 from base.base_users import select_admin_users_sms
-# from base.setting_write_base import print_users_settings
+from base.setting_write_base import delete_user_base_settings
 
 
 @dp.message_handler(lambda message: types.Message)
@@ -20,17 +21,30 @@ async def bot_send_message(message: types.Message):
         )
     elif message.text == 'Посмореть Сообщения от Пользователей':
 
-        await message.answer(text="Пользователи ждущие Вашего ответа ...")
+        if select_admin_users_sms():
+            await message.answer(text="Пользователи ждущие Вашего ответа ...")
+            await message.answer("⏳")
+            sleep(1)
+            for el in select_admin_users_sms():
+                await message.answer(
+                    text="Пользователь: <b>№ {}</b>\n"
+                         "\nТелеграм 💬\n<b>{}</b>\n"
+                         "\nНомер телефона 📲\n<code>{}</code>\n"
+                         "\nСообщение 📝\n**************\n"
+                         "<b><i>{}</i></b>\n"
+                         "\n************".format(el[0], el[1], el[2], el[3]),
+                    parse_mode='HTML'
+                )
+        else:
+            await message.delete()
+            await message.answer(text="Сообщений от пользователей нет! :)")
+    elif message.text == 'Очистить SMS-Пользователей':
 
-        for el in select_admin_users_sms():
-            await message.answer(
-                text="Пользователь: <b>№ {}</b>\n"
-                     "\nТелеграм 💬\n<b>{}</b>\n"
-                     "\nНомер телефона 📲\n<code>{}</code>\n"
-                     "\nСообщение 📝\n**************\n"
-                     "<b><i>{}</i></b>\n \n************".format(el[0], el[1], el[2], el[3]),
-                parse_mode='HTML'
-            )
+        delete_user_base_settings()
+
+        await message.answer(
+            text="Выполнено! 🗑"
+        )
     elif message.text == 'Далее => 📖📚':
         await message.reply(
             "Выберите Дуа",
