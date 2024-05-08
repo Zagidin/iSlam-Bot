@@ -10,8 +10,8 @@ def write_base_settings():
     return user_id
 
 
-def print_users_settings():
-    users_sms = [item[0] for item in select_admin_users_sms()]
-    len_users = len(users_sms)
-
-    return users_sms, len_users
+# def print_users_settings():
+#     users_sms = [item[0] for item in select_admin_users_sms()]
+#     len_users = len(users_sms)
+#
+#     return users_sms, len_users

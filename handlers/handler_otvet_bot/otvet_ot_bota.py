@@ -20,9 +20,17 @@ async def bot_send_message(message: types.Message):
         )
     elif message.text == 'Посмореть Сообщения от Пользователей':
 
-        await message.answer(
-            text="Пользователи: \n\n{}".format(*select_admin_users_sms())
-        )
+        await message.answer(text="Пользователи ждущие Вашего ответа ...")
+
+        for el in select_admin_users_sms():
+            await message.answer(
+                text="Пользователь: <b>№ {}</b>\n"
+                     "\nТелеграм 💬\n<b>{}</b>\n"
+                     "\nНомер телефона 📲\n<code>{}</code>\n"
+                     "\nСообщение 📝\n**************\n"
+                     "<b><i>{}</i></b>\n \n************".format(el[0], el[1], el[2], el[3]),
+                parse_mode='HTML'
+            )
     elif message.text == 'Далее => 📖📚':
         await message.reply(
             "Выберите Дуа",

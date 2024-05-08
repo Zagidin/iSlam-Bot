@@ -57,7 +57,7 @@ async def send_phone_feedback(message: Message, state: FSMContext):
 
     open_write_base_users(
         id_user=message.from_user.id,
-        name=message.from_user.username,
+        name='https://t.me/' + message.from_user.username,
         phone=data['phone_feedback'],
         sms_user=data['sms_feedback']
     )
