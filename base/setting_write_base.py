@@ -1,5 +1,3 @@
-from fsm.admins import DeleteUsers
-from aiogram.dispatcher import FSMContext
 from base.base_users import (
     select_all_users,
     select_admin_users_sms,
