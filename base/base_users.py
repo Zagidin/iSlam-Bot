@@ -52,7 +52,7 @@ def select_admin_users_sms():
     db = sqlite3.connect('./base/users.db')
     cur = db.cursor()
 
-    sql = "SELECT id, name, phone, sms_user FROM Users"
+    sql = "SELECT id, name, phone, id_user, sms_user FROM Users"
 
     cur.execute(sql)
 

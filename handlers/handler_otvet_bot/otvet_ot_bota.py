@@ -30,9 +30,11 @@ async def bot_send_message(message: types.Message):
                     text="Пользователь: <b>№ {}</b>\n"
                          "\nТелеграм 💬\n<b>{}</b>\n"
                          "\nНомер телефона 📲\n<code>{}</code>\n"
+                         "\n<u><i><b>User-ID:</b></i></u> <code>{}</code>\n"
                          "\nСообщение 📝\n**************\n"
                          "<b><i>{}</i></b>\n"
-                         "\n************".format(el[0], el[1], el[2], el[3]),
+                         "\n************\n\n\n<b><i>Ответить пользователю 💬</i></b>\n"
+                         "/message".format(el[0], el[1], el[2], el[3], el[4]),
                     parse_mode='HTML'
                 )
         else:
