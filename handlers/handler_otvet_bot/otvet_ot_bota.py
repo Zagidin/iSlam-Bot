@@ -3,6 +3,9 @@ import text_file
 from time import sleep
 from aiogram import types
 from bot.registar_bot import dp
+from img_load import (
+    fadjr, zuhr, asr, magrib, isha
+)
 from keyboards.keybard_dua import (
     dua_list_one, dua_list_two, dua_list_tree, dua_list_four
 )
@@ -156,6 +159,31 @@ async def bot_send_message(message: types.Message):
         await message.answer(
             text_file.after_az1an,
             parse_mode='HTML'
+        )
+    elif message.text == '🌄 Фаджр':
+        await message.answer_photo(
+            fadjr,
+            caption='Фаджр - 2 ракаата',
+            parse_mode='HTML'
+        )
+        await message.answer(
+
+        )
+    elif message.text == '🏙️ Зухр':
+        await message.answer(
+            text='В разработке'
+        )
+    elif message.text == '🌇 Аср':
+        await message.answer(
+            text='В разработке'
+        )
+    elif message.text == '🌅 Магриб':
+        await message.answer(
+            text='В разработке'
+        )
+    elif message.text == '🌃 Иша':
+        await message.answer(
+            text='В разработке'
         )
     elif message.text == 'Сура ~ 1':
         file = open('SURAH/RU~01.pdf', 'rb')

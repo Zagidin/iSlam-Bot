@@ -5,5 +5,6 @@ from .nasheed import dp
 from .search import dp
 from .search_browser import dp
 from .feedback import dp
+from .namaz import dp
 
 __all__ = ["dp"]
