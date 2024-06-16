@@ -41,3 +41,35 @@ with open('IMG_NAMAZ/magrib.jpg', 'rb') as photo:
 
 with open('IMG_NAMAZ/isha.jpg', 'rb') as photo:
     isha = photo.read()
+
+# Загрузка положений человека
+
+with open('IMG_NAMAZ/PEOPLE/1.jpg', 'rb') as photo:
+    vid_1 = photo.read()
+
+with open('IMG_NAMAZ/PEOPLE/2.jpg', 'rb') as photo:
+    vid_2 = photo.read()
+
+with open('IMG_NAMAZ/PEOPLE/3.jpg', 'rb') as photo:
+    vid_3 = photo.read()
+
+with open('IMG_NAMAZ/PEOPLE/4.jpg', 'rb') as photo:
+    vid_4 = photo.read()
+
+with open('IMG_NAMAZ/PEOPLE/5.jpg', 'rb') as photo:
+    vid_5 = photo.read()
+
+with open('IMG_NAMAZ/PEOPLE/6.jpg', 'rb') as photo:
+    vid_6 = photo.read()
+
+with open('IMG_NAMAZ/PEOPLE/7.jpg', 'rb') as photo:
+    vid_7 = photo.read()
+
+with open('IMG_NAMAZ/PEOPLE/8.jpg', 'rb') as photo:
+    vid_8 = photo.read()
+
+with open('IMG_NAMAZ/PEOPLE/9.jpg', 'rb') as photo:
+    vid_9 = photo.read()
+
+with open('IMG_NAMAZ/PEOPLE/10.jpg', 'rb') as photo:
+    vid_10 = photo.read()

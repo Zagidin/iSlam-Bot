@@ -7,7 +7,7 @@ from img_load import (
     shag_9
 )
 from aiogram.types import ReplyKeyboardRemove
-from keyboards.keyboard_namaz.namaz_key import namaz
+from keyboards.keyboard_namaz.namaz_key_reply import namaz
 
 
 @dp.callback_query_handler()

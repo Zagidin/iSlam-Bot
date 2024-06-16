@@ -13,7 +13,8 @@ async def help_bot(message: types.Message):
         f"поднимают руки на уровне плеч ладонями вверх и пониженным голосом произносят "
         f"мольбы на арабском или другом, понятном обращающемуся языке.</b>\n\n\n"
         f"1) <u><b>Читать Сура</b> - /surah</u>\n\n"
-        f"2) <u><b>Слушать Нашиды</b> - /nasheed</u>",
+        f"2) <u><b>Слушать Нашиды</b> - /nasheed</u>\n\n"
+        f"3) <u><b>Обучение Намазу</b> - /namaz</u>",
         parse_mode='HTML',
         reply_markup=proect_help
     )
